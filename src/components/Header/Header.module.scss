@@ -1,61 +1,31 @@
 @import "../../styles/colors.scss";
 
 .Header {
-  height: 120vh;
-  background-color: $color-primary;
+  height: 95vh;
+  // background-color: $color-grey-dark;
   overflow: hidden;
+  // position: relative;
 
-  .svg {
-    overflow: scroll;
-    enable-background: new 0 0 3841 108.5;
+  .HeaderTop {
+    height: 70%;
+    background-color: $color-primary;
   }
 
-  .fill {
-    fill: #ffffff;
-    stroke-miterlimit: 10;
-  }
-
-  .white {
-    width: 100%;
-    height: 37%;
-    background: #fff;
-    z-index: 10;
-    margin-top: -0.3rem;
-  }
-
-  .image {
-    width: 100%;
+  .WavesContainer {
+    // display: none;
     position: relative;
-    position: relative;
-    display: flex;
-    padding: 5rem;
-    box-sizing: border-box;
-    justify-content: center;
-    height: 73%;
-
-    .container {
-      width: 100%;
-      position: absolute;
-      bottom: -0.6rem;
-      overflow: hidden;
-    }
-
-    .container svg {
-      width: 200%;
-      position: relative;
-      animation: moveleft 5s linear infinite;
-    }
   }
 
-  @keyframes moveleft {
-    0% {
-      left: 0%;
-    }
-    100% {
-      left: -100%;
-    }
-  }
-}
+  // .WavesContainerSecond {
+  //   svg {
+  //     display: block;
+  //   }
 
-.ChildHeader {
+  //   height: 100%;
+  //   width: 100%;
+  //   position: absolute;
+  //   top: 43.3rem;
+  //   z-index: 100;
+  //   left: 0;
+  // }
 }
