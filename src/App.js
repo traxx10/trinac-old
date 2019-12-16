@@ -1,16 +1,17 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
+
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Homepage from "./pages/HomePage/Homepage";
 
 class App extends React.PureComponent {
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Footer />
-      </div>
+      <Switch>
+        <Route path="/" exact render={routeProps => <Homepage />} />
+      </Switch>
     );
   }
 }

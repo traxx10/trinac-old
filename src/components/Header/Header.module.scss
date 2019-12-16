@@ -1,31 +1,144 @@
 @import "../../styles/colors.scss";
 
 .Header {
-  height: 95vh;
+  // min-height: 95vh;
   // background-color: $color-grey-dark;
   overflow: hidden;
-  // position: relative;
 
   .HeaderTop {
-    height: 70%;
     background-color: $color-primary;
+    padding: 1.5rem 0rem;
+
+    .MenuContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .MenuLeft {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        .MenuItem {
+          color: #fff;
+          font-weight: 600;
+          margin: 0 2.5rem;
+          text-decoration: none;
+          font-size: 1.4rem;
+          border-width: 0;
+          border-bottom-style: solid;
+          border-color: transparent;
+          border-bottom-width: 0.2rem;
+          padding-bottom: 0.3rem;
+          transition: all 0.2s ease-in;
+
+          &:hover {
+            border-bottom-color: $color-accent;
+            transform: translateY(-0.3rem);
+            // text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+          }
+
+          &:visited {
+            color: #fff;
+          }
+        }
+      }
+
+      .MenuRight {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        .Button {
+          background-color: #fff;
+          border-radius: 20rem;
+          color: $color-primary;
+          transition: all 0.2s ease-in;
+          padding: 0.6rem 1.5rem;
+          box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+          &:hover {
+            transform: translateY(-0.3rem);
+          }
+
+          a {
+            font-weight: 600;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .HeaderContent {
+    height: 60vh;
+    padding-top: 3rem;
+    background-color: $color-primary;
+    position: relative;
+
+    .LeftContainer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      flex-direction: column;
+      flex: 1;
+      height: 100%;
+      transform: translateY(20%);
+    }
+
+    .Details {
+      margin-bottom: 3rem;
+      span {
+        padding: 0;
+        margin: 0;
+        font-size: 5rem;
+        color: #fff;
+        font-weight: 600;
+        line-height: 6rem;
+      }
+    }
+
+    .Button {
+      background-color: #fff;
+      border-radius: 20rem;
+      color: $color-primary;
+      transition: all 0.2s ease-in;
+      padding: 1.2rem 2rem;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+      &:hover {
+        transform: translateY(-0.3rem);
+      }
+
+      a {
+        font-weight: 600;
+        margin: 0 1rem;
+        text-decoration: none;
+        font-size: 1.3rem;
+      }
+    }
+
+    .ImageContainer {
+      // display: none;
+      height: 100%;
+      position: absolute;
+      right: -5rem;
+      top: -2rem;
+
+      .Image {
+        width: 90rem;
+        // height: 10rem;
+      }
+    }
   }
 
   .WavesContainer {
-    // display: none;
     position: relative;
   }
-
-  // .WavesContainerSecond {
-  //   svg {
-  //     display: block;
-  //   }
-
-  //   height: 100%;
-  //   width: 100%;
-  //   position: absolute;
-  //   top: 43.3rem;
-  //   z-index: 100;
-  //   left: 0;
-  // }
 }
