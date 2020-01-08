@@ -1,4 +1,5 @@
 @import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
 
 .Header {
   // min-height: 95vh;
@@ -8,6 +9,10 @@
   .HeaderTop {
     background-color: $color-primary;
     padding: 1.5rem 0rem;
+
+    // @include respond(tab-port) {
+    //   padding: 0rem;
+    // }
 
     .MenuContainer {
       display: flex;
@@ -20,6 +25,10 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+
+        @include respond(tab-port) {
+          display: none;
+        }
 
         .MenuItem {
           color: #fff;
@@ -53,6 +62,10 @@
         justify-content: flex-end;
         align-items: center;
 
+        @include respond(tab-port) {
+          display: none;
+        }
+
         .Button {
           background-color: #fff;
           border-radius: 20rem;
@@ -82,6 +95,20 @@
     background-color: $color-primary;
     position: relative;
 
+    // @include respond(tab-land) {
+    //   min-height: 70vh;
+    // }
+
+    @include respond(tab-port) {
+      padding-top: 0rem;
+      height: 50vh;
+    }
+
+    @include respond(phone) {
+      height: 40vh;
+      // height: 30vh;
+    }
+
     .LeftContainer {
       display: flex;
       justify-content: flex-end;
@@ -101,6 +128,23 @@
         color: #fff;
         font-weight: 600;
         line-height: 6rem;
+
+        // @include respond(tab-land) {
+        //   font-size: 2.7rem;
+        //   line-height: 2.7rem;
+        //   text-align: left;
+        // }
+
+        @include respond(tab-port) {
+          font-size: 3rem;
+          line-height: 3rem;
+          text-align: left;
+        }
+
+        @include respond(phone) {
+          font-size: 2rem;
+          line-height: 2rem;
+        }
       }
     }
 
@@ -112,6 +156,14 @@
       padding: 1.2rem 2rem;
       box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 
+      @include respond(tab-port) {
+        padding: 1rem 1.5rem;
+      }
+
+      @include respond(phone) {
+        padding: 1rem 0.5rem;
+      }
+
       &:hover {
         transform: translateY(-0.3rem);
       }
@@ -121,6 +173,14 @@
         margin: 0 1rem;
         text-decoration: none;
         font-size: 1.3rem;
+
+        @include respond(tab-port) {
+          font-size: 1.1rem;
+        }
+
+        @include respond(phone) {
+          font-size: 1rem;
+        }
       }
     }
 

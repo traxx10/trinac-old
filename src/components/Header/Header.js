@@ -13,16 +13,17 @@ class Header extends PureComponent {
             <Grid xs={1} item></Grid>
             <Grid xs={10} item>
               <div className={styles.MenuContainer}>
+                <div style={styles.LogoContainer}> Trinac </div>
                 <div className={styles.MenuLeft}>
                   <Link
                     className={styles.MenuItem}
-                    style={{ margin: 0 }}
-                    to="/#work"
+                    style={{ marginLeft: 0 }}
+                    to="/#portfolio"
                     scroll={el =>
                       el.scrollIntoView({ behavior: "instant", block: "end" })
                     }
                   >
-                    Work
+                    Portfolio
                   </Link>
                   <Link
                     className={styles.MenuItem}
@@ -96,28 +97,7 @@ class Header extends PureComponent {
                     </Button>
                   </div>
                 </Grid>
-                <Grid item xs={12} md={12} lg={6} xl={6}>
-                  {/* <div
-                    style={{
-                      height: "160%",
-                      width: "100%",
-                      backgroundColor: "red"
-                    }}
-                  >
-                    <img
-                      className={styles.Image}
-                      src={require("../../assets/images/devices.png")}
-                      alt="trinac"
-                    />
-                  </div> */}
-                  <div className={styles.ImageContainer}>
-                    <img
-                      className={styles.Image}
-                      src={require("../../assets/images/devices.png")}
-                      alt="trinac"
-                    />
-                  </div>
-                </Grid>
+                <Grid item xs={12} md={12} lg={6} xl={6}></Grid>
               </Grid>
             </Grid>
             <Grid xs={1} container item></Grid>
