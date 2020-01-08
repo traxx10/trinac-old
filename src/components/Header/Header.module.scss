@@ -2,17 +2,11 @@
 @import "../../styles/mixins.scss";
 
 .Header {
-  // min-height: 95vh;
-  // background-color: $color-grey-dark;
   overflow: hidden;
 
   .HeaderTop {
     background-color: $color-primary;
     padding: 1.5rem 0rem;
-
-    // @include respond(tab-port) {
-    //   padding: 0rem;
-    // }
 
     .MenuContainer {
       display: flex;
@@ -26,6 +20,15 @@
 
       .Logo {
         height: 80%;
+
+        @include respond(tab-port) {
+          height: 70%;
+        }
+
+        @include respond(phone) {
+          height: 70%;
+        }
+
         // padding: 2rem;
       }
 
@@ -216,7 +219,7 @@
 
   .WavesContainer {
     position: relative;
-
+    margin-bottom: 0;
     svg > path {
       fill: $color-primary;
     }

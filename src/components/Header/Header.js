@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
-import { HashLink as Link } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 import { Button, Grid } from "@material-ui/core";
 import Img from "react-image";
 import styles from "./Header.module.scss";
@@ -14,60 +15,62 @@ class Header extends PureComponent {
             <Grid xs={10} item>
               <div className={styles.MenuContainer}>
                 <div className={styles.LogoContainer}>
-                  <Img
-                    className={styles.Logo}
-                    src={require("../../assets/logo/trinac-logo-white.svg")}
-                  />
+                  <Link to={`/`}>
+                    <Img
+                      className={styles.Logo}
+                      src={require("../../assets/logo/trinac-logo-white.svg")}
+                    />
+                  </Link>
                 </div>
                 <div className={styles.MenuLeft}>
-                  <Link
+                  <HashLink
                     className={styles.MenuItem}
                     style={{ marginLeft: 0 }}
                     to="/#portfolio"
                     scroll={el =>
-                      el.scrollIntoView({ behavior: "instant", block: "end" })
+                      el.scrollIntoView({ behavior: "smooth", block: "end" })
                     }
                   >
                     Portfolio
-                  </Link>
-                  <Link
+                  </HashLink>
+                  <HashLink
                     className={styles.MenuItem}
                     to="/#process"
                     scroll={el =>
-                      el.scrollIntoView({ behavior: "instant", block: "end" })
+                      el.scrollIntoView({ behavior: "smooth", block: "end" })
                     }
                   >
                     Process
-                  </Link>
-                  <Link
+                  </HashLink>
+                  <HashLink
                     className={styles.MenuItem}
                     to="/#services"
                     scroll={el =>
-                      el.scrollIntoView({ behavior: "instant", block: "end" })
+                      el.scrollIntoView({ behavior: "smooth", block: "end" })
                     }
                   >
                     Services
-                  </Link>
-                  <Link
+                  </HashLink>
+                  <HashLink
                     className={styles.MenuItem}
                     to="/#reviews"
                     scroll={el =>
-                      el.scrollIntoView({ behavior: "instant", block: "end" })
+                      el.scrollIntoView({ behavior: "smooth", block: "end" })
                     }
                   >
                     Reviews
-                  </Link>
+                  </HashLink>
                 </div>
                 <div className={styles.MenuRight}>
                   <Button className={styles.Button} variant="contained">
-                    <Link
+                    <HashLink
                       to="/#contact"
                       scroll={el =>
-                        el.scrollIntoView({ behavior: "instant", block: "end" })
+                        el.scrollIntoView({ behavior: "smooth", block: "end" })
                       }
                     >
                       Lets talk! 😎
-                    </Link>
+                    </HashLink>
                   </Button>
                 </div>
               </div>
@@ -88,17 +91,17 @@ class Header extends PureComponent {
                       <span> that users love.</span>
                     </div>
                     <Button className={styles.Button} variant="contained">
-                      <Link
+                      <HashLink
                         to="/#contact"
                         scroll={el =>
                           el.scrollIntoView({
-                            behavior: "instant",
+                            behavior: "smooth",
                             block: "end"
                           })
                         }
                       >
                         Lets talk! 😎
-                      </Link>
+                      </HashLink>
                     </Button>
                   </div>
                 </Grid>
