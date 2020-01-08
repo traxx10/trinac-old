@@ -19,6 +19,16 @@
       flex-direction: row;
       justify-content: space-between;
 
+      .LogoContainer {
+        margin-right: 4rem;
+        // padding: 1rem;
+      }
+
+      .Logo {
+        height: 80%;
+        // padding: 2rem;
+      }
+
       .MenuLeft {
         display: flex;
         flex: 1;
@@ -93,6 +103,12 @@
     height: 60vh;
     padding-top: 3rem;
     background-color: $color-primary;
+
+    //    background-image: linear-gradient(
+    //   to right,
+    //   $color-primary-light,
+    //   $color-primary-dark
+    // );
     position: relative;
 
     // @include respond(tab-land) {
@@ -200,5 +216,9 @@
 
   .WavesContainer {
     position: relative;
+
+    svg > path {
+      fill: $color-primary;
+    }
   }
 }
