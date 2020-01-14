@@ -3,7 +3,7 @@ import styles from "./Footer.module.scss";
 
 class Footer extends PureComponent {
   render() {
-    return <footer className={styles.Footer}>Hello Footer</footer>;
+    return <footer className={styles.Footer}></footer>;
   }
 }
 
