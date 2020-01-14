@@ -1,12 +1,16 @@
 import React, { PureComponent } from "react";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid, Icon } from "@material-ui/core";
+import { connect } from "react-redux";
+import MenuIcon from "@material-ui/icons/Menu";
 import Img from "react-image";
 import styles from "./Header.module.scss";
+import { toggleSideMenu } from "../../actions/HomePageAction";
 
 class Header extends PureComponent {
   render() {
+    const { toggleSideMenu, sideMenu } = this.props;
     return (
       <header className={styles.Header}>
         <div className={styles.HeaderTop}>
@@ -73,6 +77,13 @@ class Header extends PureComponent {
                     </HashLink>
                   </Button>
                 </div>
+                <div className={styles.MenuIconContainer}>
+                  <MenuIcon
+                    onClick={() => toggleSideMenu(sideMenu)}
+                    fontSize="large"
+                    className={styles.MenuIcon}
+                  />
+                </div>
               </div>
             </Grid>
             <Grid xs={1} item></Grid>
@@ -125,4 +136,10 @@ class Header extends PureComponent {
   }
 }
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    sideMenu: state.HomePageReducer.sideMenu
+  };
+};
+
+export default connect(mapStateToProps, { toggleSideMenu })(Header);

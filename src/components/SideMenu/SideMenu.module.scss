@@ -1,0 +1,61 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/colors.scss";
+
+.Container {
+  background-color: #fff;
+  height: 100%;
+  width: 20rem;
+
+  @include respond(tab-port) {
+    width: 30rem;
+  }
+
+  @include respond(phone) {
+    width: 17rem;
+  }
+
+  .HeaderTop {
+    background-color: $color-primary;
+    height: 5.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .LogoContainer {
+      height: 100%;
+
+      .Logo {
+        height: 100%;
+        padding: 1.9rem 0.5rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .MenuItems {
+    display: flex;
+    flex-direction: column;
+
+    .MenuItemContainers {
+      margin: 0.5rem 0.5rem;
+      padding: 0.5rem;
+      border-bottom: solid 0.2rem #ddd;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .MenuItem {
+        color: #000;
+        text-transform: uppercase;
+        // font-weight: 600;
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-align: left;
+
+        &:visited {
+          color: #000;
+        }
+      }
+    }
+  }
+}
