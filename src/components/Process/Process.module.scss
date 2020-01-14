@@ -1,6 +1,81 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
 .Process {
   height: 80vh;
-  margin-top: -4rem;
+  margin-top: -10rem;
   z-index: 200;
-  background-color: #fff;
+  padding: 0 3rem;
+
+  @include respond(tab-port) {
+    margin-top: -4rem;
+  }
+
+  .HeaderContainer {
+    padding: 0 1.5rem;
+    margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 10rem;
+    }
+
+    @include respond(phone) {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      color: $color-black;
+      text-align: center;
+      font-weight: 700;
+      font-size: 3.5rem;
+      margin: 0;
+      padding: 0;
+
+      @include respond(tab-port) {
+        font-size: 2.6rem;
+      }
+
+      @include respond(phone) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .Content {
+    .Section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+      // background-color: red;
+      margin-bottom: 2rem;
+
+      .Icon {
+        margin-bottom: 3rem;
+        height: 4.5rem;
+
+        @include respond(tab-port) {
+          height: 3.5rem;
+        }
+
+        @include respond(phone) {
+          height: 2.7rem;
+        }
+      }
+
+      .Title {
+        font-weight: 600;
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .SubTitle {
+        font-weight: 300;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
