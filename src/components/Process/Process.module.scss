@@ -2,13 +2,19 @@
 @import "../../styles/mixins.scss";
 
 .Process {
-  height: 80vh;
+  // height: 80vh;
   margin-top: -10rem;
   z-index: 200;
   padding: 0 3rem;
+  margin-bottom: 5rem;
 
   @include respond(tab-port) {
     margin-top: -4rem;
+  }
+
+  @include respond(phone) {
+    margin-top: -1rem;
+    padding: 0 1rem;
   }
 
   .HeaderContainer {
@@ -51,16 +57,22 @@
       // background-color: red;
       margin-bottom: 2rem;
 
+      @include respond(phone) {
+        padding: 0 2rem;
+      }
+
       .Icon {
         margin-bottom: 3rem;
         height: 4.5rem;
 
         @include respond(tab-port) {
           height: 3.5rem;
+          margin-bottom: 2rem;
         }
 
         @include respond(phone) {
           height: 2.7rem;
+          margin-bottom: 1.7rem;
         }
       }
 

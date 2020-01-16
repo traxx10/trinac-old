@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Grid, Card } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import Img from "react-image";
 import styles from "./Process.module.scss";
 
@@ -14,7 +14,7 @@ class Process extends PureComponent {
           </h1>
         </div>
         <div className={styles.Content}>
-          <Grid container spacing={6}>
+          <Grid container spacing={10}>
             <Grid item xs={12} sm={12} md={6} lg={3} xl={3}>
               <div className={styles.Section}>
                 <Img

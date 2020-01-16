@@ -7,6 +7,7 @@ import Footer from "../../components/Footer/Footer";
 import Process from "../../components/Process/Process";
 import { toggleSideMenu } from "../../actions/HomePageAction";
 import SideMenu from "../../components/SideMenu/SideMenu";
+import Services from "../../components/Services/Services";
 
 class Homepage extends PureComponent {
   render() {
@@ -26,6 +27,10 @@ class Homepage extends PureComponent {
 
         <div id="process" style={styles.ProcessContainer}>
           <Process />
+        </div>
+
+        <div id="services" style={styles.ServicesContainer}>
+          <Services />
         </div>
 
         <div className={styles.FooterContainer}>
