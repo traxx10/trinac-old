@@ -30,15 +30,6 @@ class Header extends PureComponent {
                   <HashLink
                     className={styles.MenuItem}
                     style={{ marginLeft: 0 }}
-                    to="/#portfolio"
-                    scroll={el =>
-                      el.scrollIntoView({ behavior: "smooth", block: "end" })
-                    }
-                  >
-                    Portfolio
-                  </HashLink>
-                  <HashLink
-                    className={styles.MenuItem}
                     to="/#process"
                     scroll={el =>
                       el.scrollIntoView({ behavior: "smooth", block: "end" })
@@ -54,6 +45,15 @@ class Header extends PureComponent {
                     }
                   >
                     Services
+                  </HashLink>
+                  <HashLink
+                    className={styles.MenuItem}
+                    to="/#portfolio"
+                    scroll={el =>
+                      el.scrollIntoView({ behavior: "smooth", block: "end" })
+                    }
+                  >
+                    Portfolio
                   </HashLink>
                   <HashLink
                     className={styles.MenuItem}

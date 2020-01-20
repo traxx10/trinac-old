@@ -25,7 +25,6 @@ class Process extends PureComponent {
                 <p className={styles.SubTitle}>
                   In consequat, quam id sodales hendrerit, eros mi molestie leo,
                   nec lacinia risus neque tristique augue. Proin tempus urna vel
-                  congue elementum. Vestibulum euismod accumsan dui, ac iaculis
                   rhoncus nibh elementum quis.
                 </p>
               </div>
@@ -40,8 +39,6 @@ class Process extends PureComponent {
                 <p className={styles.SubTitle}>
                   Nulla eleifend pulvinar purus, molestie euismod odio imperdiet
                   ac. Ut sit amet erat nec nibh rhoncus varius in non lorem.
-                  Donec interdum, lectus in convallis pulvinar, enim elit porta
-                  sapien, vel finibus erat felis sed neque. Etiam aliquet neque
                   sagittis erat tincidunt aliquam. pulvinar nisi, ac fringilla
                   urna.
                 </p>
@@ -58,8 +55,6 @@ class Process extends PureComponent {
                   Quisque suscipit ipsum est, eu venenatis leo ornare eget. Ut
                   porta facilisis elementum. Sed condimentum sed massa quis
                   ullamcorper. Donec at scelerisque neque. Pellentesque
-                  sagittis, massa sodales sodales finibus, felis ligula tempus
-                  lorem, eu porttitor ex lacus vel felis. condimentum felis
                   dignissim nec.
                 </p>
               </div>
@@ -75,8 +70,6 @@ class Process extends PureComponent {
                   {" "}
                   In consequat, quam id sodales hendrerit, eros mi molestie leo,
                   nec lacinia risus neque tristique augue. Proin tempus urna vel
-                  congue elementum. Vestibulum euismod accumsan dui, ac iaculis
-                  sem viverra eu. Donec convallis, elit vitae ornare cursus,
                   neque. Cras accumsan pretium dignissim.
                 </p>
               </div>

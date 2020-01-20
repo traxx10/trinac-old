@@ -20,18 +20,6 @@ class SideMenu extends PureComponent {
         </div>
         <div className={styles.MenuItems}>
           <div className={styles.MenuItemContainers}>
-            <HashLink
-              onClick={() => this.props.onMenuPress()}
-              className={styles.MenuItem}
-              to="/#portfolio"
-              scroll={el =>
-                el.scrollIntoView({ behavior: "smooth", block: "end" })
-              }
-            >
-              Portfolio
-            </HashLink>
-          </div>
-          <div className={styles.MenuItemContainers}>
             {" "}
             <HashLink
               onClick={() => this.props.onMenuPress()}
@@ -55,6 +43,18 @@ class SideMenu extends PureComponent {
               }
             >
               Services
+            </HashLink>
+          </div>
+          <div className={styles.MenuItemContainers}>
+            <HashLink
+              onClick={() => this.props.onMenuPress()}
+              className={styles.MenuItem}
+              to="/#portfolio"
+              scroll={el =>
+                el.scrollIntoView({ behavior: "smooth", block: "end" })
+              }
+            >
+              Portfolio
             </HashLink>
           </div>
           <div className={styles.MenuItemContainers}>
