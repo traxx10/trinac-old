@@ -28,6 +28,13 @@
       margin-bottom: 3rem;
     }
 
+    .StarContainer {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     h1 {
       color: $color-black;
       text-align: center;
@@ -72,12 +79,52 @@
       margin-bottom: 2rem;
 
       .SelectedReview {
-        // background-color: #ffffff;
-        // transform: skewX(-12deg);
         .Card {
           max-width: 100%;
           min-height: 30rem;
           padding-bottom: 2rem;
+
+          .CardInner {
+            margin: 2rem;
+
+            .Avatar {
+              height: 4.6rem;
+              width: 4.6rem;
+            }
+
+            .CardReview {
+              margin-top: 1.7rem;
+
+              span {
+                font-weight: 800;
+                font-size: 1.4rem;
+                color: #000000;
+                margin: 0;
+                padding: 0;
+                line-height: 1rem;
+              }
+
+              .CardDetails {
+                margin-top: 1.7rem;
+
+                span {
+                  font-weight: 500;
+                  margin: 0;
+                  padding: 0;
+                }
+              }
+
+              .CardDesignation {
+                margin-top: -1.1rem;
+
+                span {
+                  font-weight: 500;
+                  color: #999999;
+                  font-size: 1.2rem;
+                }
+              }
+            }
+          }
         }
       }
     }
