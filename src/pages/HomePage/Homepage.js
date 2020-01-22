@@ -14,6 +14,7 @@ import SideMenu from "../../components/SideMenu/SideMenu";
 import Services from "../../components/Services/Services";
 import Reviews from "../../components/Reviews/Reviews";
 import Portfolio from "../../components/Portfolio/Portfolio";
+import Contact from "../../components/Contact/Contact";
 
 class Homepage extends PureComponent {
   onResize = (width, height) => {
@@ -41,20 +42,24 @@ class Homepage extends PureComponent {
           <Header />
         </div>
 
-        <div id="process" style={styles.ProcessContainer}>
+        <div id="process" className={styles.ProcessContainer}>
           <Process />
         </div>
 
-        <div id="services" style={styles.ServicesContainer}>
+        <div id="services" className={styles.ServicesContainer}>
           <Services />
         </div>
 
-        <div id="portfolio" style={styles.PortfolioContainer}>
+        <div id="portfolio" className={styles.PortfolioContainer}>
           <Portfolio />
         </div>
 
-        <div id="reviews" style={styles.ReviewsContainer}>
+        <div id="reviews" className={styles.ReviewsContainer}>
           <Reviews />
+        </div>
+
+        <div id="contact" className={styles.ContactContainer}>
+          <Contact />
         </div>
 
         <div className={styles.FooterContainer}>

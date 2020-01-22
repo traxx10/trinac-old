@@ -1,4 +1,12 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
 .Homepage {
   height: 100%;
   overflow: hidden;
+  // background-color: $color-background-light;
+
+  .ContactContainer {
+    margin-top: -9rem;
+  }
 }

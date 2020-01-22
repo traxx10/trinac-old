@@ -2,7 +2,6 @@
 @import "../../styles/mixins.scss";
 
 .Process {
-  // height: 80vh;
   margin-top: -10rem;
   z-index: 200;
   padding: 0 3rem;
@@ -65,7 +64,7 @@
 
       .Icon {
         margin-bottom: 3rem;
-        height: 4rem;
+        height: 3rem;
         filter: drop-shadow(0 0 0.5rem rgba($color-black, 0.15));
 
         @include respond(tab-port) {
