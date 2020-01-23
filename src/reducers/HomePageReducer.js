@@ -2,7 +2,9 @@ import { TOGGLE_SIDE_MENU, ON_DIMENSION_CHANGE } from "../actions/types";
 
 const INITIAL_STATE = {
   sideMenu: false,
-  dimension: {}
+  dimension: {},
+  isServiceVisible: false,
+  isServiceShown: false
 };
 
 export default (state = INITIAL_STATE, action) => {

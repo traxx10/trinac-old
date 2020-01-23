@@ -25,8 +25,9 @@ class Homepage extends PureComponent {
 
   render() {
     const { sideMenu, toggleSideMenu } = this.props;
+
     return (
-      <div className={styles.Homepage}>
+      <div id="homepage" className={styles.Homepage}>
         <ReactResizeDetector
           handleWidth
           handleHeight
@@ -38,6 +39,7 @@ class Homepage extends PureComponent {
             sideMenuActive={sideMenu}
           />
         </Drawer>
+
         <div className={styles.HeaderContainer}>
           <Header />
         </div>

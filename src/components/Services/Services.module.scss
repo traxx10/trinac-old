@@ -1,6 +1,14 @@
 @import "../../styles/colors.scss";
 @import "../../styles/mixins.scss";
 
+.ServicesBefore {
+  // z-index: 200;
+  // padding: 3rem 3rem;
+  // background-color: $color-background-light;
+  // height: 100vh;
+  opacity: 0;
+}
+
 .Services {
   z-index: 200;
   padding: 3rem 3rem;
@@ -196,7 +204,11 @@
         max-width: 100%;
         min-height: 35rem;
         padding-bottom: 2rem;
-        background-image: linear-gradient(to right top, #7737d5, #d57737);
+        background-image: linear-gradient(
+          to right top,
+          $color-secondary,
+          $color-tertiary
+        );
         color: #fff;
         display: flex;
         justify-content: center;

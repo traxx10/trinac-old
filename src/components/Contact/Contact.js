@@ -44,8 +44,8 @@ class Contact extends PureComponent {
                           className: styles.InputField
                         }}
                         InputLabelProps={{ className: styles.InputLabel }}
-                        id="email"
-                        label="Email Address"
+                        id="username"
+                        label="Fiverr Username"
                         variant="filled"
                         className={styles.TextField}
                         fullWidth

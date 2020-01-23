@@ -4,13 +4,16 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
+import { StyleRoot } from "radium";
 import store from "./store";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <StyleRoot>
+        <App />
+      </StyleRoot>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")
