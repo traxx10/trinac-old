@@ -1,0 +1,13 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.LoadingPage {
+  height: 100vh;
+  width: 100%;
+
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary,
+    $color-primary-dark
+  );
+}

@@ -8,75 +8,95 @@ import Footer from "../../components/Footer/Footer";
 import Process from "../../components/Process/Process";
 import {
   toggleSideMenu,
-  onDimensionChange
+  onDimensionChange,
+  onLoadComplete
 } from "../../actions/HomePageAction";
 import SideMenu from "../../components/SideMenu/SideMenu";
 import Services from "../../components/Services/Services";
 import Reviews from "../../components/Reviews/Reviews";
 import Portfolio from "../../components/Portfolio/Portfolio";
 import Contact from "../../components/Contact/Contact";
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 class Homepage extends PureComponent {
+  componentDidMount() {
+    const { onLoadComplete } = this.props;
+    setTimeout(() => {
+      onLoadComplete();
+    }, 3000);
+  }
+
   onResize = (width, height) => {
     const { onDimensionChange } = this.props;
     let dimension = { width, height };
     onDimensionChange(dimension);
   };
 
-  render() {
-    const { sideMenu, toggleSideMenu } = this.props;
+  renderComponent = () => {
+    const { loadingPage, sideMenu, toggleSideMenu } = this.props;
 
-    return (
-      <div id="homepage" className={styles.Homepage}>
-        <ReactResizeDetector
-          handleWidth
-          handleHeight
-          onResize={this.onResize}
-        />
-        <Drawer open={sideMenu} onClose={() => toggleSideMenu(sideMenu)}>
-          <SideMenu
-            onMenuPress={() => toggleSideMenu(sideMenu)}
-            sideMenuActive={sideMenu}
+    if (loadingPage) {
+      return <LoadingPage />;
+    } else {
+      return (
+        <div id="homepage" className={styles.Homepage}>
+          <ReactResizeDetector
+            handleWidth
+            handleHeight
+            onResize={this.onResize}
           />
-        </Drawer>
+          <Drawer open={sideMenu} onClose={() => toggleSideMenu(sideMenu)}>
+            <SideMenu
+              onMenuPress={() => toggleSideMenu(sideMenu)}
+              sideMenuActive={sideMenu}
+            />
+          </Drawer>
 
-        <div className={styles.HeaderContainer}>
-          <Header />
-        </div>
+          <div className={styles.HeaderContainer}>
+            <Header />
+          </div>
 
-        <div id="process" className={styles.ProcessContainer}>
-          <Process />
-        </div>
+          <div id="process" className={styles.ProcessContainer}>
+            <Process />
+          </div>
 
-        <div id="services" className={styles.ServicesContainer}>
-          <Services />
-        </div>
+          <div id="services" className={styles.ServicesContainer}>
+            <Services />
+          </div>
 
-        <div id="portfolio" className={styles.PortfolioContainer}>
-          <Portfolio />
-        </div>
+          <div id="portfolio" className={styles.PortfolioContainer}>
+            <Portfolio />
+          </div>
 
-        <div id="reviews" className={styles.ReviewsContainer}>
-          <Reviews />
-        </div>
+          <div id="reviews" className={styles.ReviewsContainer}>
+            <Reviews />
+          </div>
 
-        <div id="contact" className={styles.ContactContainer}>
-          <Contact />
-        </div>
+          <div id="contact" className={styles.ContactContainer}>
+            <Contact />
+          </div>
 
-        <div className={styles.FooterContainer}>
-          <Footer />
+          <div className={styles.FooterContainer}>
+            <Footer />
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+  };
+
+  render() {
+    return this.renderComponent();
   }
 }
 
 const mapStateToProps = state => {
   return {
-    sideMenu: state.HomePageReducer.sideMenu
+    sideMenu: state.HomePageReducer.sideMenu,
+    loadingPage: state.HomePageReducer.loadingPage
   };
 };
-export default connect(mapStateToProps, { toggleSideMenu, onDimensionChange })(
-  Homepage
-);
+export default connect(mapStateToProps, {
+  toggleSideMenu,
+  onDimensionChange,
+  onLoadComplete
+})(Homepage);
