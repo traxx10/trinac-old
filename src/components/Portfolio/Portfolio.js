@@ -28,9 +28,19 @@ class Portfolio extends PureComponent {
           <div className={styles.ButtonBase}>
             <div className={styles.Overlay}>
               <div className={styles.Button}>
-                <Link to="/portfolio/:id" className={styles.Link}>
-                  View
-                </Link>
+                {image.category === "mobile" || image.category === "web" ? (
+                  <a
+                    href={image.appUrl}
+                    target="_blank"
+                    className={styles.Link}
+                  >
+                    View
+                  </a>
+                ) : (
+                  <Link to={`/portfolio/${index}`} className={styles.Link}>
+                    View
+                  </Link>
+                )}
               </div>
             </div>
             <Img
@@ -43,7 +53,7 @@ class Portfolio extends PureComponent {
                     height: "100%"
                   }}
                 >
-                  <ThreeBounce size={20} />
+                  <ThreeBounce size={15} />
                 </div>
               }
               src={image.url}

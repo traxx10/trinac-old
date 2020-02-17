@@ -9,7 +9,8 @@ import Process from "../../components/Process/Process";
 import {
   toggleSideMenu,
   onDimensionChange,
-  onLoadComplete
+  onLoadComplete,
+  onAppLoaded
 } from "../../actions/HomePageAction";
 import SideMenu from "../../components/SideMenu/SideMenu";
 import Services from "../../components/Services/Services";
@@ -20,10 +21,14 @@ import LoadingPage from "../LoadingPage/LoadingPage";
 
 class Homepage extends PureComponent {
   componentDidMount() {
-    const { onLoadComplete } = this.props;
-    setTimeout(() => {
-      onLoadComplete();
-    }, 3000);
+    const { onLoadComplete, onAppLoaded, onAppLoadComplete } = this.props;
+
+    if (!onAppLoadComplete) {
+      setTimeout(() => {
+        onLoadComplete();
+        onAppLoaded();
+      }, 2000);
+    }
   }
 
   onResize = (width, height) => {
@@ -92,11 +97,13 @@ class Homepage extends PureComponent {
 const mapStateToProps = state => {
   return {
     sideMenu: state.HomePageReducer.sideMenu,
-    loadingPage: state.HomePageReducer.loadingPage
+    loadingPage: state.HomePageReducer.loadingPage,
+    onAppLoadComplete: state.HomePageReducer.onAppLoadComplete
   };
 };
 export default connect(mapStateToProps, {
   toggleSideMenu,
   onDimensionChange,
-  onLoadComplete
+  onLoadComplete,
+  onAppLoaded
 })(Homepage);

@@ -1,7 +1,8 @@
 import {
   TOGGLE_SIDE_MENU,
   ON_DIMENSION_CHANGE,
-  ON_LOAD_COMPLETE
+  ON_LOAD_COMPLETE,
+  ON_APP_LOADED
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -9,7 +10,8 @@ const INITIAL_STATE = {
   dimension: {},
   isServiceVisible: false,
   isServiceShown: false,
-  loadingPage: true
+  loadingPage: true,
+  onAppLoadComplete: false
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -22,6 +24,9 @@ export default (state = INITIAL_STATE, action) => {
 
     case ON_LOAD_COMPLETE:
       return { ...state, loadingPage: false };
+
+    case ON_APP_LOADED:
+      return { ...state, onAppLoadComplete: true };
 
     default:
       return state;

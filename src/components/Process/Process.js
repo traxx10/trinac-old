@@ -1,10 +1,12 @@
 import React, { PureComponent } from "react";
 import { Grid } from "@material-ui/core";
+import { connect } from "react-redux";
 import Img from "react-image";
 import styles from "./Process.module.scss";
 
 class Process extends PureComponent {
   render() {
+    const { dimension } = this.props;
     return (
       <div className={styles.Process}>
         <div className={styles.HeaderContainer}>
@@ -14,7 +16,7 @@ class Process extends PureComponent {
           </h1>
         </div>
         <div className={styles.Content}>
-          <Grid container spacing={10}>
+          <Grid container spacing={dimension.width <= 415 ? 2 : 10}>
             <Grid item xs={12} sm={12} md={6} lg={3} xl={3}>
               <div className={styles.Section}>
                 <Img
@@ -81,4 +83,10 @@ class Process extends PureComponent {
   }
 }
 
-export default Process;
+const mapStateToProps = state => {
+  return {
+    dimension: state.HomePageReducer.dimension
+  };
+};
+
+export default connect(mapStateToProps)(Process);

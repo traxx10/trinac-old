@@ -109,6 +109,10 @@
           p {
             font-size: 1.4rem;
             line-height: 2rem;
+
+            @include respond(tab-land) {
+              font-size: 1.2rem;
+            }
           }
         }
 
