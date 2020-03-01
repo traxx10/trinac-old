@@ -92,7 +92,7 @@ class Contact extends PureComponent {
                         }}
                         InputLabelProps={{ className: styles.InputLabel }}
                         id="message"
-                        label="Message Description"
+                        label="Project Description"
                         variant="filled"
                         className={styles.TextField}
                         fullWidth

@@ -1,0 +1,73 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.Footer {
+  height: 4rem;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+
+  @include respond(tab-land) {
+    height: 7rem;
+  }
+
+  @include respond(phone) {
+    height: 10rem;
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+  }
+
+  .Copyright {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+
+    @include respond(tab-land) {
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    @include respond(phone) {
+      margin-bottom: 0.5rem;
+      align-items: flex-end;
+    }
+
+    span {
+      font-size: 1.2rem;
+      color: #999;
+
+      //   @include respond(tab-land) {
+
+      //   }
+    }
+  }
+
+  .Social {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+
+    @include respond(tab-land) {
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .SocialIcons {
+      height: 1.5rem;
+      margin: 0 1.5rem;
+
+      @include respond(tab-land) {
+        height: 1.3rem;
+        margin: 0 0.7rem;
+      }
+    }
+  }
+}
