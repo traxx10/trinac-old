@@ -87,7 +87,9 @@ class Reviews extends PureComponent {
                         />
                         <div className={styles.CardReview}>
                           <blockquote>
-                            <span>“{review.review}”</span>
+                            <span className={styles.CardReviewSpan}>
+                              “{review.review}”
+                            </span>
                           </blockquote>
 
                           <div className={styles.CardDetails}>
