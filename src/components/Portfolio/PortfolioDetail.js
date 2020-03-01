@@ -60,15 +60,7 @@ function PortfolioDetail(props) {
               <div className={styles.ImageContainer}>
                 <Img
                   loader={
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        height: "100%",
-                        width: "100%"
-                      }}
-                    >
+                    <div className={styles.LoaderContainer}>
                       <ThreeBounce size={15} />
                     </div>
                   }

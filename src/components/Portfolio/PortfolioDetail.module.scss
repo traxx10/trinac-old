@@ -23,6 +23,14 @@
       background-color: #ffffff;
       width: 100%;
 
+      .LoaderContainer {
+        height: 30rem;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+      }
+
       .ImageContainer {
         width: 100%;
         margin-bottom: 3rem;
