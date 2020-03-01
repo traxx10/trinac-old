@@ -61,22 +61,22 @@
 
       @include respond(phone) {
         padding: 0 2rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 3.5rem;
       }
 
       .Icon {
-        margin-bottom: 3rem;
+        margin-bottom: 0.5rem;
         height: 3rem;
         filter: drop-shadow(0 0 0.5rem rgba($color-black, 0.15));
 
         @include respond(tab-port) {
           height: 3.5rem;
-          margin-bottom: 2rem;
+          // margin-bottom: 2rem;
         }
 
         @include respond(phone) {
           height: 2.7rem;
-          margin-bottom: 1.7rem;
+          // margin-bottom: 1.7rem;
         }
       }
 
