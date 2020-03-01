@@ -83,7 +83,7 @@ class Portfolio extends PureComponent {
           <h1> Our recent works!</h1>
         </div>
         <div className={styles.ContentContainer}>
-          <Grid className={styles.GridContainer} container spacing={2}>
+          <Grid className={styles.GridContainer} container spacing={1}>
             {images}
           </Grid>
 
