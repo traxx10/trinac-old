@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Drawer } from "@material-ui/core";
+import ScrollToTop from "react-scroll-up";
 import ReactResizeDetector from "react-resize-detector";
 import styles from "./Homepage.module.scss";
 import Header from "../../components/Header/Header";
@@ -18,6 +19,8 @@ import Reviews from "../../components/Reviews/Reviews";
 import Portfolio from "../../components/Portfolio/Portfolio";
 import Contact from "../../components/Contact/Contact";
 import LoadingPage from "../LoadingPage/LoadingPage";
+import Img from "react-image";
+import ArrowUpwardRoundedIcon from "@material-ui/icons/ArrowUpwardRounded";
 import { CSSTransition } from "react-transition-group";
 
 function Homepage(props) {
@@ -47,6 +50,8 @@ function Homepage(props) {
   };
 
   const renderComponent = () => {
+    const { dimension } = props;
+
     if (loadingPage) {
       return (
         <CSSTransition
@@ -104,6 +109,26 @@ function Homepage(props) {
           <div className={styles.FooterContainer}>
             <Footer />
           </div>
+
+          {dimension.width <= 415 ? null : (
+            <ScrollToTop
+              style={{
+                position: "fixed",
+                cursor: "pointer",
+                transitionDuration: "0.2s",
+                transitionTimingFunction: "linear",
+                transitionDelay: "0s",
+                zIndex: 200,
+                right: dimension.width <= 415 ? 15 : 30,
+                bottom: dimension.width <= 415 ? 150 : 50
+              }}
+              showUnder={160}
+            >
+              <div className={styles.ScrollContainer}>
+                <ArrowUpwardRoundedIcon className={styles.ScrollUp} />
+              </div>
+            </ScrollToTop>
+          )}
         </div>
       );
     }
@@ -116,9 +141,11 @@ const mapStateToProps = state => {
   return {
     sideMenu: state.HomePageReducer.sideMenu,
     loadingPage: state.HomePageReducer.loadingPage,
-    onAppLoadComplete: state.HomePageReducer.onAppLoadComplete
+    onAppLoadComplete: state.HomePageReducer.onAppLoadComplete,
+    dimension: state.HomePageReducer.dimension
   };
 };
+
 export default connect(mapStateToProps, {
   toggleSideMenu,
   onDimensionChange,
