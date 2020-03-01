@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import {
   Transition,
   TransitionGroup,
@@ -10,6 +10,7 @@ import "./App.scss";
 import Footer from "./components/Footer/Footer";
 import PortfolioDetail from "./components/Portfolio/PortfolioDetail";
 import Homepage from "./pages/HomePage/Homepage";
+import NotFoundPage from "./pages/404/NotFoundPage";
 
 class App extends React.PureComponent {
   render() {
@@ -37,6 +38,7 @@ class App extends React.PureComponent {
               //     appear={true}
               //     timeout={{ enter: 500, exit: 500 }}
               //   >
+
               <Switch location={location}>
                 <Route
                   path="/"
@@ -47,6 +49,9 @@ class App extends React.PureComponent {
                   path="/portfolio/:id"
                   render={routeProps => <PortfolioDetail {...routeProps} />}
                 />
+
+                <Route path="/404" component={NotFoundPage} />
+                <Redirect to="/404" />
               </Switch>
               //   </CSSTransition>
               // </TransitionGroup>
