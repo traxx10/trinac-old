@@ -11,7 +11,8 @@ const INITIAL_STATE = {
   isServiceVisible: false,
   isServiceShown: false,
   loadingPage: true,
-  onAppLoadComplete: false
+  onAppLoadComplete: false,
+  showingLoader: true
 };
 
 export default (state = INITIAL_STATE, action) => {

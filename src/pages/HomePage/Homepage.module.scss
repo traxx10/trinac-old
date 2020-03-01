@@ -5,25 +5,22 @@
   height: 100%;
   overflow: hidden;
 
-  // background-color: $color-background-light;
   .ContactContainer {
     margin-top: -9rem;
   }
 }
 
-// @keyframes moveInTop {
-//   0% {
-//     opacity: 0.4;
-//     transform: translateY(10rem);
-//   }
-
-//   80% {
-//     opacity: 0.8;
-//     transform: translateY(1rem);
-//   }
-
-//   100% {
-//     opacity: 1;
-//     transform: translate(0);
-//   }
-// }
+.FadeEnter {
+  opacity: 0;
+}
+.FadeEnterActive {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.FadeExit {
+  opacity: 1;
+}
+.FadeExitActive {
+  opacity: 0;
+  transition: opacity 500ms;
+}
