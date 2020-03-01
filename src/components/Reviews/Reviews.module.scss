@@ -87,6 +87,10 @@
           .CardInner {
             margin: 2rem;
 
+            @include respond(phone) {
+              margin: 1rem;
+            }
+
             .Avatar {
               height: 4.6rem;
               width: 4.6rem;

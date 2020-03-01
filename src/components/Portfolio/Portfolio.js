@@ -37,7 +37,15 @@ class Portfolio extends PureComponent {
                     View
                   </a>
                 ) : (
-                  <Link to={`/portfolio/${index}`} className={styles.Link}>
+                  <Link
+                    to={{
+                      pathname: `/portfolio/${index}`,
+                      state: {
+                        data: image
+                      }
+                    }}
+                    className={styles.Link}
+                  >
                     View
                   </Link>
                 )}
@@ -75,7 +83,7 @@ class Portfolio extends PureComponent {
           <h1> Our recent works!</h1>
         </div>
         <div className={styles.ContentContainer}>
-          <Grid className={styles.GridContainer} container spacing={0}>
+          <Grid className={styles.GridContainer} container spacing={2}>
             {images}
           </Grid>
 

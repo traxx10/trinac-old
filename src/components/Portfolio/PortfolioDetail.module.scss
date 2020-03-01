@@ -1,0 +1,44 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.PortfolioDetail {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary,
+    $color-primary-dark
+  );
+
+  .Content {
+    margin-top: 10rem;
+    padding: 1rem;
+
+    @include respond(phone) {
+      margin-top: 3rem;
+    }
+
+    .Card {
+      background-color: #ffffff;
+      width: 100%;
+
+      .ImageContainer {
+        width: 100%;
+        margin-bottom: 3rem;
+
+        .Image {
+          width: 100%;
+        }
+      }
+
+      .ParagrahContainer {
+        margin: 0 2rem;
+        margin-bottom: 2rem;
+
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
