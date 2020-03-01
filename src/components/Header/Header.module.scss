@@ -222,6 +222,48 @@
         // height: 10rem;
       }
     }
+
+    .GridLottie {
+      height: 100%;
+      width: 100%;
+      transform: translateY(40%);
+      display: flex;
+      justify-content: flex-end;
+
+      .LottieContainer {
+        display: flex;
+        align-self: flex-end;
+        justify-content: center;
+        align-items: center;
+        height: 30rem;
+        width: 30rem;
+        border-radius: 15rem;
+        background-color: white;
+      }
+
+      @include respond(tab-land) {
+        display: none;
+      }
+
+      @include respond(phone) {
+        display: flex;
+        position: absolute;
+        top: -7rem;
+        right: 2rem;
+        transform: translateY(0);
+
+        .LottieContainer {
+          display: flex;
+          align-self: flex-end;
+          justify-content: center;
+          align-items: center;
+          height: 7rem;
+          width: 7rem;
+          border-radius: 7rem;
+          background-color: white;
+        }
+      }
+    }
   }
 
   .WavesContainer {

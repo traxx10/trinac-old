@@ -6,7 +6,19 @@ import { connect } from "react-redux";
 import MenuIcon from "@material-ui/icons/Menu";
 import Img from "react-image";
 import styles from "./Header.module.scss";
+import Lottie from "react-lottie";
+import animationData from "../../assets/lottie/homescreen.json";
+
 import { toggleSideMenu } from "../../actions/HomePageAction";
+
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+  }
+};
 
 class Header extends PureComponent {
   render() {
@@ -116,7 +128,24 @@ class Header extends PureComponent {
                     </Button>
                   </div>
                 </Grid>
-                <Grid item xs={12} md={12} lg={6} xl={6}></Grid>
+                <Grid item xs={12} md={12} lg={6} xl={6}>
+                  <div className={styles.GridLottie}>
+                    <div className={styles.LottieContainer}>
+                      <Lottie
+                        eventListeners={[
+                          {
+                            eventName: "complete",
+                            callback: () =>
+                              console.log("the animation completed:")
+                          }
+                        ]}
+                        options={defaultOptions}
+                        height={this.props.dimension.width <= 640 ? 100 : 300}
+                        width={this.props.dimension.width <= 640 ? 100 : 300}
+                      />
+                    </div>
+                  </div>
+                </Grid>
               </Grid>
             </Grid>
             <Grid xs={1} container item></Grid>
@@ -138,7 +167,8 @@ class Header extends PureComponent {
 
 const mapStateToProps = state => {
   return {
-    sideMenu: state.HomePageReducer.sideMenu
+    sideMenu: state.HomePageReducer.sideMenu,
+    dimension: state.HomePageReducer.dimension
   };
 };
 
